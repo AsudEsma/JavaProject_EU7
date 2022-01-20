@@ -6,6 +6,6 @@ public abstract class ElectricTruck extends ElectricCar {
         super(model,price,color);
     }
 
-    public abstract void load();
+    public abstract void load(String item);
 
 }

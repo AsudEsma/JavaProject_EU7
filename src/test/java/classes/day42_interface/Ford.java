@@ -15,16 +15,16 @@ public class Ford extends ElectricCar {
 
     @Override
     public void start() {
-
+        System.out.println("Ford - Push start button to start the car...");
     }
 
     @Override
     public void charge() {
-
+        System.out.println("Ford - plugin to electric outlet...");
     }
 
     @Override
     public void drive() {
-
+        System.out.println("Ford is driving...");
     }
 }
