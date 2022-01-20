@@ -7,4 +7,12 @@ public interface IElectric {
 
     public abstract void charge();
     void charge2(); // public abstract  --  You dont need to write it.
+
+    public default void methodA(){
+        // code
+    }
+
+    public static void methodB(){
+        // code
+    }
 }

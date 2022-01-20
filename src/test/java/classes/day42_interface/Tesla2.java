@@ -1,6 +1,6 @@
 package classes.day42_interface;
 
-public class Tesla2 implements IElectric, ISelfDriving {
+public class Tesla2 extends Vehicle implements IElectric, ISelfDriving {
     @Override
     public void charge() {    }
 
