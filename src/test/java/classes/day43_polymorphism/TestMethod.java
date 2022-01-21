@@ -13,15 +13,24 @@ public class TestMethod {
         chB.m2();
         chB.m4();
 
-        Parent pr1 = new ChildA();      // Polymorphism only have access to Overriden methods.
+        Parent pr1 = new ChildA();       // Polymorphism only have access to Overriden methods.
         pr1.m1();
 //      pr1.m2();
 //      pr1.m3();
 
-        Parent pr2 = new ChildB();      // Polymorphism only have access to Overriden methods.
+        Parent pr2 = new ChildB();       // Polymorphism only have access to Overriden methods.
         pr1.m1();
 //      pr1.m2();
 //      pr1.m4();
+
+        IMyInterface int1 = new ChildA(); // Polymorphism only have access to Overriden methods.
+        int1.m2();
+//      int1.m3();
+
+        IMyInterface int2 = new ChildB(); // Polymorphism only have access to Overriden methods.
+        int2.m2();
+//      int2.m4();
+
     }
 }
 
