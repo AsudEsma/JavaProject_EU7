@@ -1,5 +1,11 @@
 package classes.day43_polymorphism;
 
+import assignments.ReplitAnswers.ArrayList_2Times;
+import classes.day24_arrays.Array;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class ShapesArray {
 
     public static void main(String[] args) {
@@ -13,5 +19,10 @@ public class ShapesArray {
             System.out.println(sh.getClass().getName());
             System.out.println(sh.getClass().getSimpleName());
         }
+
+        List<Shape> shapeList = new ArrayList<>();
+        shapeList.add(new Triangle());
+        shapeList.add(new Circle());
+        shapeList.add(new Square());
     }
 }
