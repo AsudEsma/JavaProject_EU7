@@ -8,7 +8,7 @@ public abstract class MessagingApp {
     public static final String APP_TYPE = "Messanger";
 
     public MessagingApp() {
-        System.out.println("MessangerApp no-args constructor");
+        System.out.println("MessangerApp no-args constructor...");
     }
 
     public abstract void SendMessage(String msg);
