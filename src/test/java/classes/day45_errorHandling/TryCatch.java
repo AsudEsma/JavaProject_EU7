@@ -12,6 +12,8 @@ public class TryCatch {
             System.out.println("Exception happened in try block and was caught");
         }
 
+        System.out.println("After try-catch block");
+
 
 
 
