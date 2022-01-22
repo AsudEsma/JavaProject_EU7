@@ -3,6 +3,8 @@ package classes.day45_errorHandling;
 public class MultiCatch {
     public static void main(String[] args) {
 
+        // First Catch:
+
         try {
             System.out.println(4/0);
 
@@ -20,6 +22,8 @@ public class MultiCatch {
             e.printStackTrace();
         }
 
+        // Second Catch:
+
         try {
             System.out.println(4/1);
 
@@ -36,6 +40,8 @@ public class MultiCatch {
         } catch (RuntimeException e) {
             e.printStackTrace();
         }
+
+        // Third Catch:
 
         try {
             System.out.println(4/1);
