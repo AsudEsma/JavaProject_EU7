@@ -19,8 +19,15 @@ public class QueueExample {
         System.out.println(name);
         System.out.println(queue);
 
+        // poll() and remove() is very similar. Only difference is poll() will return null if the queue is empty
         name = queue.poll();
         System.out.println(name);
         System.out.println(queue);
+
+        // Get the element at the front of the queue without removing it using peek()
+        name = queue.peek();
+        System.out.println(name);
+        System.out.println(queue);
+
     }
 }
