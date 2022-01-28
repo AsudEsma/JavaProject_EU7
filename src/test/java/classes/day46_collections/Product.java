@@ -32,7 +32,7 @@ public class Product implements Comparable<Product> {
         return "Product [name=" + name + ", price=" + price + "]";
     }
 
-    /*
+    /**
      * this method returns an int of 3 types:
      * 1-positive number - > this product is larger than another product
      * 2-zero - > this Product and another product are eqaul

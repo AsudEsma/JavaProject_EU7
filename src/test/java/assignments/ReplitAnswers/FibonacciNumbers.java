@@ -13,7 +13,7 @@ public class FibonacciNumbers {
 			
 		  }
 		  
-		  public static int fib(int num){
+		  public static long fib(int num){
 		    //WRITE YOUR CODE HERE
 			  if (num <= 1) {
 		            return num;
