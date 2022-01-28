@@ -4,32 +4,32 @@ import java.util.Scanner;
 
 public class FibonacciNumbers_PRO {
 
-	private static long[] fibonacciCache;
+    private static long[] fibonacciCache;
 
-	public static void main(String[] args) {
-		    Scanner scan = new Scanner(System.in);
-		    int num = scan.nextInt();
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int num = scan.nextInt();
 
-			fibonacciCache = new long[num + 1];
+        fibonacciCache = new long[num + 1];
 
-		    System.out.println(fib(num));
-		    scan.close();
-			
-		  }
+        System.out.println(fib(num));
+        scan.close();
 
-		  public static long fib(int num){
-		    //WRITE YOUR CODE HERE
-			  if (num <= 1) {
-		            return num;
-			  }
+    }
 
-			  if(fibonacciCache[num] != 0) {
-				  return fibonacciCache[num];
-			  }
+    public static long fib(int num) {
+        //WRITE YOUR CODE HERE
+        if (num <= 1) {
+            return num;
+        }
 
-			  long nthFibonacciNum = fib(num - 1) + fib(num - 2);
-			  fibonacciCache[num] = nthFibonacciNum;
-			  return nthFibonacciNum;
-		    }
+        if (fibonacciCache[num] != 0) {
+            return fibonacciCache[num];
+        }
 
-		}
+        long nthFibonacciNum = fib(num - 1) + fib(num - 2);
+        fibonacciCache[num] = nthFibonacciNum;
+        return nthFibonacciNum;
+    }
+
+}
