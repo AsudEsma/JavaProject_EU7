@@ -1,4 +1,4 @@
-package classes.day46_collections;
+package classes.day46_collections_part1;
 
 import java.util.ArrayList;
 import java.util.Collection;
