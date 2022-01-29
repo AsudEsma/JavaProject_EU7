@@ -1,9 +1,6 @@
 package classes.day47_collections_part2;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class SetExample {
     public static void main(String[] args) {
@@ -31,6 +28,22 @@ public class SetExample {
         System.out.println("uniqueList = " + uniqueList);
         System.out.println("list.size() = " + list.size());
         System.out.println("uniqueList.size() = " + uniqueList.size());
+
+        // Duplicates are not allowed but it has an order
+        TreeSet<Integer> tSet = new TreeSet<>();
+        tSet.add(500);
+        tSet.add(100);
+        tSet.add(98);
+        tSet.add(8);
+        tSet.add(500);
+        tSet.add(98);
+        tSet.add(100);
+        tSet.add(4);
+        tSet.add(5);
+        tSet.add(90);
+        tSet.add(98);
+
+        System.out.println("tSet = " + tSet);
 
     }
 }
