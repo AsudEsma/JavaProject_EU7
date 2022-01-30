@@ -1,5 +1,7 @@
 package assignments.Assignment_OOP_Concepts;
 
+import java.util.Scanner;
+
 public class Q8 {
     /**
      * Write a class definition of a class named 'Value' with the following:
@@ -13,4 +15,14 @@ public class Q8 {
      * getVal returns the value passed to that constructor.
      * Otherwise, getVal returns 0.
      */
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        Value v = new Value(in.nextInt());
+        System.out.println(v.getVal());
+        System.out.println(v.wasModified());
+        v.setVal(in.nextInt());
+        System.out.println(v.getVal());
+        System.out.println(v.wasModified());
+
+    }
 }
