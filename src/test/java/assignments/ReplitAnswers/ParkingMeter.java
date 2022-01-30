@@ -10,7 +10,7 @@ public class ParkingMeter {
 
     public boolean add(int num) {
         if(num==25) {
-            if(timeLeft+25 < maxTime) {
+            if(timeLeft+num < maxTime) {
                 timeLeft += 30;
                 return true;
             }
