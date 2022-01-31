@@ -1,4 +1,4 @@
-package assignments.Assignment_OOP_Concepts;
+package assignments.Assignment_OOP_Concepts.Q02;
 
 public class LameCalculator {
     public int plus(int a, int b) {

@@ -1,4 +1,4 @@
-package assignments.Assignment_OOP_Concepts;
+package assignments.Assignment_OOP_Concepts.Q03;
 
 public class Db {
     private String data;

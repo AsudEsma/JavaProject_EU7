@@ -1,4 +1,4 @@
-package assignments.Assignment_OOP_Concepts;
+package assignments.Assignment_OOP_Concepts.Q02;
 
 import java.util.Scanner;
 

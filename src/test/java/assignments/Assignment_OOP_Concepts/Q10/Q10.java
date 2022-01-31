@@ -1,4 +1,4 @@
-package assignments.Assignment_OOP_Concepts;
+package assignments.Assignment_OOP_Concepts.Q10;
 
 public class Q10 {
     /**
@@ -14,5 +14,10 @@ public class Q10 {
      * calc.plus(10,1)
      * returns:11
      */
-
+    public static void main(String[] args) {
+        System.out.println(Calc.plus(10, 1));
+        System.out.println(Calc.minus(1, 1));
+        System.out.println(Calc.plus(10, 5));
+        System.out.println(Calc.minus(20, 6));
+    }
 }
