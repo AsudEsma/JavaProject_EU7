@@ -36,5 +36,43 @@ public class LoopWtihIterator {
         while(it.hasNext()) {
             System.out.print(it.next() + "|");
         }
+
+        System.out.println();
+
+//      System.out.println("it.next() = " + it.next());
+        // No more elements to print out
+
+        Iterator<Integer> it2 = nums.iterator();
+        /**
+         * The difference between iterator and for each loop is:
+         * We can remove objects while looping with iterator
+         */
+
+        while (it2.hasNext()) {
+            int val = it2.next();
+            if(val>60) {
+                it2.remove();
+            }
+        }
+        System.out.println(nums);
+
+        List<String> cities = new ArrayList<>();
+        cities.add("Boston");
+        cities.add("New York");
+        cities.add("Washington DC");
+        cities.add("Virginia");
+        cities.add("California");
+        cities.add("Texas");
+        cities.add("New York");
+        cities.add("Los Angeles");
+        cities.add("Boston");
+
+        for (String city : cities) {
+            if(city.equals("Boston")) {
+                cities.remove(city);
+            }
+        }
+
+        // We got **ConcurrentModificationException**
     }
 }

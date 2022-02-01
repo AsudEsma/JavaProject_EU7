@@ -13,3 +13,5 @@ package assignments.ReplitAnswers.TableGenerator;
 public interface IPrime {
     boolean isPrime(int n);
 }
+
+
