@@ -3,16 +3,10 @@ package assignments.Assignment_OOP_Concepts.Q03;
 public class Db {
     private String data;
     private int yint;
-    // Do not touch
-    public Db(String data, int yint) {
-        this.data = data;
-        this.yint = yint;
-    }
-    // Do not touch
 
     public void insertData(String data, int yint) {
-        this.data = data;
-        this.yint = yint;
+        setData(data);
+        setYint(yint);
     }
 
     public String getData() {

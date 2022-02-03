@@ -22,15 +22,11 @@ public class Q3 {
      */
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        Db db = new Db(in.next(),in.nextInt());
+        Db db = new Db();
 
-        System.out.println(db.getData());
-        System.out.println(db.getYint());
+        db.insertData("Wooden Spoon", 6);
 
-        db.setData(in.next());
-        db.setYint(in.nextInt());
-
-        System.out.println(db.getData());
-        System.out.println(db.getYint());
+        System.out.println("db.getData() = " + db.getData());
+        System.out.println("db.getYint() = " + db.getYint());
     }
 }

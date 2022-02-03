@@ -11,4 +11,9 @@ public class Q9 {
      * the other is of type double called total, initialized to 15658.92.
      * Create getNumber() and setNumber() methods that will manipulate with number instance variable.
      */
+
+    public static void main(String[] args) {
+        System.out.println("Telephone.quantity = " + Telephone.quantity);
+        System.out.println("Telephone.total = " + Telephone.total);
+    }
 }

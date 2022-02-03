@@ -5,10 +5,13 @@ public class Value {
     private boolean modified;
 
     public Value() {
+        setVal(0);
+        this.modified = false;
     }
 
     public Value(int val) {
         this.val = val;
+        this.modified = false;
     }
 
     public int getVal() {

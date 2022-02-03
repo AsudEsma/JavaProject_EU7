@@ -2,7 +2,7 @@ package assignments.Assignment_OOP_Concepts.Q05;
 
 public class TV {
     private int channel = 1;
-    private int volumeLevel = 0;
+    private int volumeLevel = 1;
     private boolean on = false;
     private String brand = "undefined";
 
@@ -21,7 +21,7 @@ public class TV {
 
     public void setChannel(int channel) {
         if(on) {
-            if (channel < 1 && channel > 120) {
+            if (channel < 1 || channel > 120) {
                 System.out.println("ERROR: TV is either OFF or invalid Channel");
             } else {
                 this.channel = channel;
@@ -37,7 +37,7 @@ public class TV {
 
     public void setVolumeLevel(int volumeLevel) {
         if(on) {
-            if (volumeLevel < 0 && volumeLevel > 7) {
+            if (volumeLevel < 1 && volumeLevel > 7) {
                 System.out.println("ERROR: TV is either OFF or invalid Volume level");
             } else {
                 this.volumeLevel = volumeLevel;
@@ -79,20 +79,20 @@ public class TV {
                 return volumeLevel;
             }
         } else {
-            setVolumeLevel(0);
+            setVolumeLevel(1);
             return volumeLevel;
         }
     }
 
     public int volumeDown() {
         if(on) {
-            if (volumeLevel > 0) {
+            if (volumeLevel > 1) {
                 return volumeLevel--;
             } else {
                 return volumeLevel;
             }
         } else {
-            setVolumeLevel(0);
+            setVolumeLevel(1);
             return volumeLevel;
         }
     }

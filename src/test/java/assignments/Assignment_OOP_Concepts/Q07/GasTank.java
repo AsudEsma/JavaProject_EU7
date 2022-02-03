@@ -8,7 +8,7 @@ public class GasTank {
         this.capacity = capacity;
     }
 
-    public void addGas(double addedGas) {
+    public void addGas(double addedGas) {       // capacity = 100   amount = 65     addedeGas = 40
         if((amount+addedGas)<capacity) {
             amount += addedGas;
         } else {
@@ -30,6 +30,7 @@ public class GasTank {
     public boolean isFull() {
         return (amount>capacity-0.1);
     }
+
     public double getGasLevel() {
         return amount;
     }

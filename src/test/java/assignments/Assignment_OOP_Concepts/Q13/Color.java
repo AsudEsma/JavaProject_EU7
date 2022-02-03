@@ -2,6 +2,7 @@ package assignments.Assignment_OOP_Concepts.Q13;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * represents basic Color class example
@@ -50,7 +51,7 @@ public class Color {
      */
     public Color() {
         //TODO
-        rgb = WHITE;
+        this(255,255,255);
     }
 
     /**
@@ -80,7 +81,7 @@ public class Color {
         String outcome = "n/a";
         for (int i = 0; i < colors.size(); i++) {
             if(Arrays.equals(rgb,colors.get(i))) {
-                outcome = colorNames[i];
+                outcome = colorNames[i].toLowerCase(Locale.ROOT).replace("_", " ");
             }
         }
 

@@ -1,8 +1,7 @@
 package assignments.Assignment_OOP_Concepts.Q04;
 
 public class Person {
-    private String firstName;
-    private String lastName;
+    private String firstName, lastName;
     private int age;
 
     public Person() {
@@ -12,9 +11,9 @@ public class Person {
     }
 
     public Person(String firstName, String lastName, int age) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.age = age;
+        setAge(age);
+        setFirstName(firstName);
+        setLastName(lastName);
     }
 
     public String getFirstName() {
@@ -22,7 +21,11 @@ public class Person {
     }
 
     public void setFirstName(String firstName) {
-        this.firstName = firstName;
+        if(!firstName.isEmpty()) {
+            this.firstName = firstName;
+        } else {
+            this.firstName = "undifined";
+        }
     }
 
     public String getLastName() {
@@ -38,7 +41,11 @@ public class Person {
     }
 
     public void setAge(int age) {
-        this.age = age;
+        if(age<0 || age>99) {
+            this.age = -1;
+        } else {
+            this.age = age;
+        }
     }
 
     @Override

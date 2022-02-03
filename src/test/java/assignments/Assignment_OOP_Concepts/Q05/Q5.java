@@ -48,5 +48,7 @@ public class Q5 {
         tv2.turnOff();
         tv2.setVolumeLevel(in.nextInt());
         tv2.volumeUp();
+
+
     }
 }

@@ -26,15 +26,24 @@ public class Q4 {
      * try to use this. keyword
      */
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        Person person1 = new Person();
-        System.out.println(person1.getFirstName());
-        System.out.println(person1.getAge());
-        person1.setAge(in.nextInt());
-        System.out.println(person1.getAge());
+//        Scanner in = new Scanner(System.in);
+//        Person person1 = new Person();
+//        System.out.println(person1.getFirstName());
+//        System.out.println(person1.getAge());
+//        person1.setAge(in.nextInt());
+//        System.out.println(person1.getAge());
+//
+//        Person person = new Person(in.next(), in.next(), in.nextInt());
+//        System.out.println(person.getLastName());
+//        System.out.println(person.toString());
 
-        Person person = new Person(in.next(), in.next(), in.nextInt());
-        System.out.println(person.getLastName());
-        System.out.println(person.toString());
+        Person p1 = new Person("", "Dikmen", -10);
+        System.out.println("p1.getAge() = " + p1.getAge());
+        p1.setAge(46);
+        System.out.println("p1.getAge() = " + p1.getAge());
+        System.out.println("p1.toString() = " + p1.toString());
+
+        Person p2 = new Person("Ali", "Dikmen", 46);
+
     }
 }

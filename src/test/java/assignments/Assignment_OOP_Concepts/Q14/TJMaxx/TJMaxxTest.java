@@ -17,7 +17,7 @@ public class TJMaxxTest {
 
         TJMaxx list1 = new TJMaxx();
 
-        list1.addRegularItem(item1);
+        list1.addRegularItem(new Item("green apple", 5, 221, 0.99));
         list1.addRegularItem(item2);
         list1.addRegularItem(item3);
         list1.addRegularItem(item4);
