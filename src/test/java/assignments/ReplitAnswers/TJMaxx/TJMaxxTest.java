@@ -1,13 +1,13 @@
 package assignments.ReplitAnswers.TJMaxx;
 
 public class TJMaxxTest {
-	
 	public static void main(String[] args) {
 		
 		Item item1 = new Item("green apple", 5, 221, 0.99);
         Item item2 = new Item("orange",2, 102, 1.99);
         Item item3 = new Item("pineapple",3, 103, 2.99);
         Item item4 = new Item("pear",4, 104, 3.99);
+        Item item5 = new Item("red apple",4, 101, 3.99);
         
         OnSaleItem saleItem10 = new OnSaleItem("red apple",2,101, 1, 5);
         OnSaleItem saleItem11 = new OnSaleItem("broccoli",1, 105, 2, 10);
@@ -21,6 +21,7 @@ public class TJMaxxTest {
         list1.addRegularItem(item2);
         list1.addRegularItem(item3);
         list1.addRegularItem(item4);
+        list1.addRegularItem(item5);
 
         list1.addOnSaleItem(saleItem10);
         list1.addOnSaleItem(saleItem11);
@@ -59,16 +60,13 @@ public class TJMaxxTest {
         System.out.println("Amount of broccoli after sale: "+saleItem11.getQuantity());
         list1.buyItem(108);
         System.out.println("Amount of grape after sale: "+saleItem14.getQuantity());
-        list1.buyItem(108);
+        list1.buyItem(108, 6);
+        System.out.println("Amount of grape after sale: "+saleItem14.getQuantity());
+        list1.buyItem(108, 4);
         System.out.println("Amount of grape after sale: "+saleItem14.getQuantity());
         list1.buyItem(108);
-        System.out.println("Amount of grape after sale: "+saleItem14.getQuantity());
-        list1.buyItem(108);
-        System.out.println("Amount of grape after sale: "+saleItem14.getQuantity());
-        list1.buyItem(108);
-        System.out.println("Amount of grape after sale: "+saleItem14.getQuantity());
-        list1.buyItem(108);
-        System.out.println("Amount of grape after sale: "+saleItem14.getQuantity());
+        list1.buyItem(102,6);
+        System.out.println("Amount of orange after sale: "+item2.getQuantity());
 
         System.out.println("All items remained: "+list1.getAllItemNames());
 

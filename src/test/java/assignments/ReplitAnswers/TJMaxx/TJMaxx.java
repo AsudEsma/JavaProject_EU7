@@ -21,11 +21,8 @@ public class TJMaxx {
      * as new ArrayList
      */
     public TJMaxx() {
-        //TODO
-    	
     	regularItems = new ArrayList<>();
         onSaleItems = new ArrayList<>();
-        
     }
 
     /**
@@ -38,14 +35,12 @@ public class TJMaxx {
     		
     		if(each.getName().equalsIgnoreCase(item.getName())) {
     			
-    			each.setQuantity(each.getQuantity()+1);
+    			each.setQuantity(each.getQuantity()+item.getQuantity());
     			
     			return;
     		}
     	}
-    	
     	regularItems.add(item);
-       
     }
 
     /**
@@ -58,14 +53,12 @@ public class TJMaxx {
     		
     		if(each.getName().equalsIgnoreCase(item.getName())) {
     			
-    			each.setQuantity(each.getQuantity()+1);
+    			each.setQuantity(each.getQuantity()+item.getQuantity());
     			
     			return;
     		}
     	}
-    	
     	onSaleItems.add(item);
-        
     }
 
     /**
@@ -73,7 +66,6 @@ public class TJMaxx {
      * @return
      */
     public List<Item> getRegularItems() {
-         
         return regularItems;
     }
 
@@ -82,7 +74,6 @@ public class TJMaxx {
      * @return
      */
     public List<OnSaleItem> getOnSaleItems() {
-          
         return onSaleItems;
     }
 
@@ -91,7 +82,6 @@ public class TJMaxx {
      * @return
      */
     public int regularItemsCount() {
-          
         return regularItems.size();
     }
 
@@ -100,7 +90,6 @@ public class TJMaxx {
      * @return
      */
     public int onSaleItemsCount() {
-         
         return onSaleItems.size();
     }
 
@@ -122,7 +111,6 @@ public class TJMaxx {
     	   
     	   names.add(each.getName());
        }
-       
        return names;
     }
 
@@ -133,22 +121,19 @@ public class TJMaxx {
      * @returns 0.0 if product cannot be found with that catalogNumber
      */
     public double getItemPrice(int catalogNumber) {
-       
+       	double price = 0;
+
     	for(Item each : regularItems) {
-    		
     		if(each.getCatalogNumber()==catalogNumber) {
-    			return each.getPrice();
+    			price = each.getPrice();
     		}
     	}
-    	
     	for(OnSaleItem each : onSaleItems) {
-    		
     		if(each.getCatalogNumber()==catalogNumber) {
-    			return each.getPrice();
+    			price = each.getPrice();
     		}
     	}
-    	
-        return 0.0;
+        return price;
     }
 
     /**
@@ -163,12 +148,9 @@ public class TJMaxx {
     	for(OnSaleItem each : onSaleItems) {
     		
     		if(each.getName().equalsIgnoreCase(name)) {
-    			
     			return each;
     		}
-    		
     	}
-        
         return null;
     }
 
@@ -184,6 +166,7 @@ public class TJMaxx {
     		
     		if(regularItems.get(i).getCatalogNumber()==catalogNumber) {
     			regularItems.remove(i);
+				System.out.println("The regular item " + catalogNumber + " is removed.");
     		}
     	}
     	
@@ -191,9 +174,9 @@ public class TJMaxx {
     		
     		if(onSaleItems.get(i).getCatalogNumber()==catalogNumber) {
     			onSaleItems.remove(i);
+				System.out.println("The on sale item " + catalogNumber + " is removed.");
     		}
     	}
-    	
     }
 
     /**
@@ -210,8 +193,8 @@ public class TJMaxx {
     	for(int i=0; i<regularItems.size(); i++) {
     		
     		if(regularItems.get(i).getCatalogNumber()==catalogNumber) {
-    			regularItems.get(i).setQuantity(regularItems.get(i).getQuantity()-1);
-    			
+				regularItems.get(i).setQuantity(regularItems.get(i).getQuantity() - 1);
+
     			if(regularItems.get(i).getQuantity()==0) {
     				removeItem(catalogNumber);
     			}
@@ -221,17 +204,45 @@ public class TJMaxx {
     	for(int i=0; i<onSaleItems.size(); i++) {
     		
     		if(onSaleItems.get(i).getCatalogNumber()==catalogNumber) {
-    			onSaleItems.get(i).setQuantity(onSaleItems.get(i).getQuantity()-1);
-    			
+				onSaleItems.get(i).setQuantity(onSaleItems.get(i).getQuantity() - 1);
+
     			if(onSaleItems.get(i).getQuantity()==0) {
     				removeItem(catalogNumber);
     			}
     		}
     	}
-       
-       
     }
 
+	public void buyItem(int catalogNumber, int quantity) {
+
+		for(int i=0; i<regularItems.size(); i++) {
+
+			if(regularItems.get(i).getCatalogNumber()==catalogNumber) {
+				if(regularItems.get(i).getQuantity() >= quantity) {
+					regularItems.get(i).setQuantity(regularItems.get(i).getQuantity() - quantity);
+				} else {
+					System.out.println("The amount exceeds the stocks.");
+				}
+				if(regularItems.get(i).getQuantity()==0) {
+					removeItem(catalogNumber);
+				}
+			}
+		}
+
+		for(int i=0; i<onSaleItems.size(); i++) {
+
+			if(onSaleItems.get(i).getCatalogNumber()==catalogNumber) {
+				if(onSaleItems.get(i).getQuantity() >= quantity) {
+					onSaleItems.get(i).setQuantity(onSaleItems.get(i).getQuantity() - quantity);
+				} else {
+					System.out.println("The amount exceeds the stocks.");
+				}
+				if(onSaleItems.get(i).getQuantity()==0) {
+					removeItem(catalogNumber);
+				}
+			}
+		}
+	}
 
 }
 

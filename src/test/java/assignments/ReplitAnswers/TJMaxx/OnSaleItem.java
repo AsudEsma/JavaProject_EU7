@@ -22,7 +22,6 @@ public class OnSaleItem extends Item {
      * - assigns discount
      */
     public OnSaleItem (String name,int quantity,int catalogNumber,double price, double discount) {
-      
     	super(name, quantity, catalogNumber, (price*(1-discount/100)));
     	this.discount = discount;
     }
@@ -32,7 +31,6 @@ public class OnSaleItem extends Item {
      * @return
      */
     public double getDiscount() {
-      //TODO
         return discount;
     }
 
@@ -41,22 +39,21 @@ public class OnSaleItem extends Item {
      * @param discount
      */
     public void setDiscount(double discount) {
-       
-    	this.discount = discount;
+        if(discount>0 && discount<100) {
+            this.discount = discount;
+        }
     }
-
 
     /**
      * overrides toString from Item:
      *
      * @returns Object description in this format:
-     *      * "OnSaleItem{discount=20.0%, name=ItemName, price=100.45}"
+     * "OnSaleItem{discount=20.0%, name=ItemName, price=100.45}"
      *
      */
 
 	@Override
 	public String toString() {
-		return "OnSaleItem{discount=" + discount + "%, name=" + getName() + ", price=" + getPrice();
+		return "OnSaleItem{discount=" + discount + "%, name=" + getName() + ", price=" + getPrice() + "}";
 	}
-    
 }

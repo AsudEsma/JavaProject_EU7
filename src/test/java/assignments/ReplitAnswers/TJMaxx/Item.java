@@ -18,12 +18,10 @@ public class Item {
      * assigns to values to instance variables
      */
     public Item(String name,int quantity,int catalogNumber, double price) {
-      
       setName(name);
       setQuantity(quantity);
       setCatalogNumber(catalogNumber);
       setPrice(price);
-      
     }
 
     /**
@@ -31,8 +29,9 @@ public class Item {
      * @param name
      */
     public void setName(String name) {
-       
-    	this.name = name;
+       if(!name.isEmpty()) {
+           this.name = name;
+       }
     }
 
     /**
@@ -40,8 +39,9 @@ public class Item {
      * @param price
      */
     public void setPrice(double price) {
-       
-    	this.price = price;
+        if(price>0) {
+            this.price = price;
+        }
     }
 
     /**
@@ -49,7 +49,6 @@ public class Item {
      * @return
      */
     public double getPrice() {
-        
         return price;
     }
 
@@ -58,32 +57,27 @@ public class Item {
      * @return
      */
     public String getName(){
-      
-      
         return name;
     }
 
-
     public int getQuantity(){
-       
         return quantity;
 
     }
     public void setQuantity(int quantity){
-         
-    	this.quantity = quantity;
-
+        if(quantity>=0) {
+            this.quantity = quantity;
+        }
     }
 
     public int getCatalogNumber(){
-    
         return catalogNumber;
     }
 
     public void setCatalogNumber(int catalogNumber) {
-       
-    	this.catalogNumber = catalogNumber;
-       
+        if(catalogNumber>0) {
+            this.catalogNumber = catalogNumber;
+        }
     }
 
     /**
@@ -94,8 +88,8 @@ public class Item {
 
 	@Override
 	public String toString() {
-		return "Item [name=" + name + ", catalogNumber=" + catalogNumber + ", quantity=" + quantity + ", price=" + price
-				+ "]";
+		return "Regular Item {name='" + name + "', catalogNumber=" + catalogNumber + ", quantity=" + quantity
+                + ", price=" + price + "}";
 	}
   
 }
